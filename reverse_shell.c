@@ -37,12 +37,15 @@ The current code works on UNIX basically linux and mac but if only in localhost 
     hints.ai_family = AF_INET; // Use IPv4
     hints.ai_socktype = SOCK_STREAM; // TCP socket
     now you give em all to: get addrinfo():
-    getaddrinfo("TheGreen-48920.portmap.host", NULL, &hints, &res);
+    getaddrinfo("yourhost.somethin", NULL, &hints, &res);
     after that copy the resolved IP address from getaddrinfo:
     struct sockaddr_insa_in = (struct sockaddr_in ) res->ai_addr;
     data.ip = sa_in->sin_addr.s_addr;
 
-  Also you have other options to make your own resolver or use other headers...
+    That was jsut a ip resolving process at the end from host ip is extrected doin that and ip will go to ip in data struct,
+    if you don't wanna do this or osmein you can jsut use dig command in terminal and get ip or some other online resolving ways to get ip of live host,
+
+  Also you have other options to make your own resolver or use other headers so lets move on to connect after filling our data in that structure...
 */
 if(connect(sockhndl, (struct sockaddr*)&data, sizeof(data)) == 0){ // connect () takes our struct, a pack of data and connects us to one listerning in that ip and port as we defined if there is no listerner active it exits immediately.
 
