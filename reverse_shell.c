@@ -1,6 +1,6 @@
 #include <sys/socket.h> // connect() 
 #include <string.h> // memset()
-#include <arpa/inet.h> // htols(), indet_addr()
+#include <arpa/inet.h> // htons(), indet_addr()
 #include <unistd.h> // execve(), close()
 #include <sys/wait.h> // wait()
 // #include <netdb.h> // for port forwarding use gethostbyname() or getaddrinfo() according to device.
