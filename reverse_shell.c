@@ -6,11 +6,11 @@
 // #include <netdb.h> // for port forwarding use gethostbyname() or getaddrinfo() according to device.
 
 struct sockaddr_mine{  // connect() function asks for a struct so we make struct of data that is required in order to connect,
-unsigned short fam; // what to use
-unsigned short port; // which port to use
-unsigned int ip; // which ip to connect
-char padding[8]; // this padding is to ensure the custom structure is the same size as the generic, system-defined struct sockaddr in connect() so takes and stores data and there no err comes in size of struct somethin like that...
-}; // and pass it to that function.
+unsigned short fam; // what to use eg: ipv4, v6 or else,
+unsigned short port; // which port to use,
+unsigned int ip; // which ip/host to connect,
+char padding[8]; // this padding is to ensure the custom structure is the same size as the generic, system-defined struct sockaddr in connect() function so no size difference/errors comes,
+}; // and later we will pass it to connect() after putting values in it in main():
 
 int main(void){ // void means take no arguments form command line eg: ./executable <arg> <arg2>...
 
