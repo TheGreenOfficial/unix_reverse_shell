@@ -27,7 +27,7 @@ The current code works on UNIX basically linux and mac but if only in localhost 
 
   for linux you #include <netdb.h> and do
   struct hostent *host = gethostbyname("yourhost.somein");
-  data.ip = ((struct in_addr *)host->h_addr_list[0])->s_addr;
+  data.ip = ((struct in_addr *)host->h_addr_list[0])->s_addr;  or memcpy(&data.ip, host->h_addr, host->h_length);
   and you are good to go...
 
    for mac os you use #include <netdb.h> but,
