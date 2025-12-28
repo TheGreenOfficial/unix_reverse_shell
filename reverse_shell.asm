@@ -128,4 +128,4 @@ sleep_and_retry:
     syscall
     add rsp, 16
     
-    jmp connect_loop
+    jmp connect_loop        ; reconnect
